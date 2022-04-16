@@ -1,12 +1,5 @@
-@font-face {
-	font-family: Raleway-Regular;
-	src: url("raleway/Raleway-Regular.ttf");
-}
-
-@font-face {
-	font-family: Roboto-Regular;
-	src: url("roboto/Roboto-Regular.ttf");
-}
+@import "fonts.css";
+@import "titlebar.css";
 
 :root {
 	--primary-colour: rgb(255, 180, 0);

@@ -1,8 +1,8 @@
 async function run() {
 	if(require("electron-squirrel-startup")) return;
 
-	const Updater = require("./updater");
-	const Utils = require("./utils");
+	const Updater = require("./src/js/updater");
+	const Utils = require("./src/js/utils");
 
 	Utils.init();
 
@@ -17,6 +17,8 @@ async function run() {
 
 	var window;
 	var canQuit = false;
+
+	console.log(path.join(__dirname, "app.js"));
 
 	function createWindow() {
 		var options = {

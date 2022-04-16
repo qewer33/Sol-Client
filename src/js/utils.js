@@ -17,7 +17,7 @@ class Utils {
 	static accountsFile;
 	static gameDirectory;
 	static serversFile;
-	static version = require("./package.json").version;
+	static version = require("../../package.json").version;
 	static configFile;
 	static latestLog;
 
