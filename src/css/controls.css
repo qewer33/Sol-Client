@@ -141,13 +141,13 @@ a:link:hover, a:link:focus, a:link:active {
 
 .play-button {
     position: fixed;
-    left: calc(50% - 150px);
+    left: calc(50% - 175px);
     bottom: 50px;
 }
 
 .play-button, .login-button {
     border-radius: 100px;
-    width: 300px;
+    width: 350px;
     height: 100px;
     font-family: Inter-Bold;
     font-size: 3.2em;
