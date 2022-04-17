@@ -13,6 +13,7 @@
 	--background: #1F1F1F;
 	--background-lighter: #2B2B2B;
 	--background-lighter-alt: #232323;
+	--background-lightest: #363636;
 	--backgrond-darker: #191919;
 
 	--foreground: #ffffff;
@@ -222,14 +223,6 @@ img, button, a:link {
 #text1476 {
 	font-family: Raleway;
 }
-
-/*.settings, .news {
-	overflow: auto;
-	position: fixed;
-	width: 100%;
-	height: calc(100% - 350px);
-	background-color: rgb(20, 20, 20);
-}*/
 
 #launch-note {
 	position: fixed;

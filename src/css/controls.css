@@ -124,7 +124,7 @@ a:link:hover, a:link:focus, a:link:active {
 }
 
 .button-generic:hover, .button-toggle.button-active:hover {
-    background: var(--accent);
+    background: var(--background-lightest);
 }
 
 .button-generic:active, .button-toggle.button-active:active {
