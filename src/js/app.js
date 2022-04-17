@@ -1,9 +1,9 @@
-const Launcher = require("./src/js/launcher");
-const Utils = require("./src/js/utils");
-const Config = require("./src/js/config");
+const Launcher = require("./launcher");
+const Utils = require("./utils");
+const Config = require("./config");
 const launcher = Launcher.instance;
 const { ipcRenderer, shell } = require("electron");
-const { MicrosoftAuthService, YggdrasilAuthService, Account, AccountManager } = require("./src/js/auth");
+const { MicrosoftAuthService, YggdrasilAuthService, Account, AccountManager } = require("./auth");
 const microsoftAuthService = MicrosoftAuthService.instance;
 const yggdrasilAuthService = YggdrasilAuthService.instance;
 const fs = require("fs");
@@ -151,7 +151,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	});
 
 	function updateAccount() {
-		document.querySelector(".account-button").innerHTML = `<img src="${launcher.accountManager.activeAccount.head}"/> <span>${launcher.accountManager.activeAccount.username} <img src="src/svg/arrow.svg" class="arrow-icon"/></span>`;
+		document.querySelector(".account-button").innerHTML = `<img src="${launcher.accountManager.activeAccount.head}"/> <span>${launcher.accountManager.activeAccount.username} <img src="../svg/arrow.svg" class="arrow-icon"/></span>`;
 	}
 
 	function updateMinecraftFolder() {
@@ -197,7 +197,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		for(let account of launcher.accountManager.accounts) {
 			var accountElement = document.createElement("div");
 			accountElement.classList.add("account");
-			accountElement.innerHTML = `<img src="${account.head}"/> <span>${account.username}</span> <button class="remove-account"><img src="src/svg/remove.svg"/></button>`;
+			accountElement.innerHTML = `<img src="${account.head}"/> <span>${account.username}</span> <button class="remove-account"><img src="../svg/remove.svg"/></button>`;
 			accountElement.onclick = (event) => {
 				if(event.target.classList.contains("remove-account")
 						|| event.target.parentElement.classList.contains("remove-account")) {
@@ -221,7 +221,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 		var addElement = document.createElement("div");
 		addElement.classList.add("account");
-		addElement.innerHTML = `<img src="src/svg/add.svg"/> <span>Add Account</span>`;
+		addElement.innerHTML = `<img src="../svg/add.svg"/> <span>Add Account</span>`;
 		addElement.onclick = () => {
 			main.classList.add("invisible");
 			login.classList.remove("invisible");
@@ -371,7 +371,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 					serverElement.classList.add("server");
 					serverElement.innerHTML = `
-						${server.icon ? `<img src="data:image/png;base64,${server.icon.value}"/>` : `<img src="src/svg/unknown_server.svg"/>`}`;
+						${server.icon ? `<img src="data:image/png;base64,${server.icon.value}"/>` : `<img src="../svg/unknown_server.svg"/>`}`;
 
 					serversList.appendChild(serverElement);
 				}

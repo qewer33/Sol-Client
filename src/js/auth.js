@@ -304,7 +304,7 @@ class Account {
 		this.clientToken = clientToken;
 		this.demo = demo;
 		this._msmc = _msmc;
-		this.head = "headless.png";
+		this.head = "../png/headless.png";
 	}
 
 	getService() {

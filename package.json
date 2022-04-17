@@ -2,7 +2,7 @@
   "name": "Sol Client",
   "version": "1.7.0",
   "description": "Simple and easy to use Minecraft client.",
-  "main": "main.js",
+  "main": "src/js/main.js",
   "scripts": {
     "buildGame": "cd game; ./gradlew build; cd ..",
     "buildGameAndStart": "npm run buildGame && npm run start",

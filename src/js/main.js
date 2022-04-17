@@ -1,8 +1,8 @@
 async function run() {
 	if(require("electron-squirrel-startup")) return;
 
-	const Updater = require("./src/js/updater");
-	const Utils = require("./src/js/utils");
+	const Updater = require("./updater");
+	const Utils = require("./utils");
 
 	Utils.init();
 
@@ -18,15 +18,13 @@ async function run() {
 	var window;
 	var canQuit = false;
 
-	console.log(path.join(__dirname, "app.js"));
-
 	function createWindow() {
 		var options = {
 			width: 800,
 			height: 650,
-			icon: __dirname + "/assets/icon.png",
+			icon: __dirname + "../png/icon.png",
 			webPreferences: {
-				preload: path.join(__dirname, "app.js")
+				preload: path.join(__dirname, "./app.js")
 			},
 			title: "Sol Client " + Utils.version,
 			show: false,
@@ -40,7 +38,7 @@ async function run() {
 
 		window = new BrowserWindow(options);
 
-		window.loadFile("app.html");
+		window.loadFile("src/html/app.html");
 		window.setMenu(null);
 		// for dev
 		window.webContents.openDevTools();
