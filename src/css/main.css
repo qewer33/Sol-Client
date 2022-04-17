@@ -201,6 +201,18 @@ img, button, a:link {
 	cursor: pointer;
 }
 
+.server img {
+	transition: transform 0.2s;
+}
+
+.server:hover img {
+	transform: scale(120%);
+}
+
+.server:active img {
+	transform: scale(90%);
+}
+
 .server:not(:last-child) {
 	margin-right: 10px;
 }
