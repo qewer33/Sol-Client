@@ -300,12 +300,12 @@ window.addEventListener("DOMContentLoaded", () => {
 					backToMain.classList.remove("invisible");
 				else
 					backToMain.classList.remove("add");
-				playButton.innerText = "Play";
+				playButton.innerText = "PLAY";
 				launching = false;
 				return;
 			}
 			launcher.launch(() => {
-				playButton.innerText = "Play";
+				playButton.innerText = "PLAY";
 				launching = false;
 				launchNote.style.display = null;
 			}, server);

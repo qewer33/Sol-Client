@@ -115,34 +115,28 @@ a:link:hover, a:link:focus, a:link:active {
     width: calc(100% - 2px);
 }
 
-.button-generic, .button-toggle.button-active {
-    background: var(--background-lighter);
-    color: var(--foreground);
+.button-generic, .button-suggested {
     border: none;
     border-radius: 100px;
     transition: background-color 200ms;
 }
 
-.button-generic:hover, .button-toggle.button-active:hover {
+.button-generic {
+    background: var(--background-lighter);
+    color: var(--foreground);
+}
+
+.button-generic:hover {
     background: var(--background-lightest);
 }
 
-.button-generic:active, .button-toggle.button-active:active {
-    background: var(--accent-darker);
+.button-suggested {
+    background: var(--accent);
+    color: black;
 }
 
-.button-generic-black, .button-toggle {
-    background: rgb(60, 60, 60);
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgb(50, 50, 50);
-}
-
-.button-generic-black:hover, .button-toggle:hover {
-    background: rgb(70, 70, 70);
-}
-
-.button-generic-black:active, .button-toggle:active {
-    background: rgb(50, 50, 50);
+.button-suggested:hover {
+    background: var(--accent-lighter);
 }
 
 .spaced-15 {
