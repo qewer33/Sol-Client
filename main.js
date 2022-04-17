@@ -30,7 +30,6 @@ async function run() {
 			},
 			title: "Sol Client " + Utils.version,
 			show: false,
-// 			backgroundColor: "#1e1e1e",
 			frame: false,
 			transparent: true,
 		};
@@ -43,6 +42,8 @@ async function run() {
 
 		window.loadFile("app.html");
 		window.setMenu(null);
+		// for dev
+		window.webContents.openDevTools();
 
 		window.on("close", (event) => {
 			if(!canQuit) {

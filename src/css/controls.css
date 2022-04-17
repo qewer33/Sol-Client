@@ -79,13 +79,13 @@ input[type="range"]::-webkit-slider-thumb {
     height: 15px;
     width: 15px;
     border-radius: 100%;
-    background: var(--primary-colour);
+    background: var(--accent);
     transition: background 0.2s;
-    box-shadow: 0 0 5px var(--primary-colour);
+    box-shadow: 0 0 5px var(--accent);
 }
 
 input[type="range"]:hover::-webkit-slider-thumb {
-    background: var(--primary-colour-lighter);
+    background: var(--accent-lighter);
 }
 
 .error-message {
@@ -97,7 +97,7 @@ input[type="range"]:hover::-webkit-slider-thumb {
 }
 
 a:link {
-    color: var(--primary-colour);
+    color: var(--accent);
     text-decoration: none;
     transition: color 0.2s;
 }
@@ -116,18 +116,19 @@ a:link:hover, a:link:focus, a:link:active {
 }
 
 .button-generic, .button-toggle.button-active {
-    background: var(--primary-colour);
-    border-radius: 5px;
-    color: black;
-    box-shadow: 0 0 10px var(--primary-colour);
+    background: var(--background-lighter);
+    color: var(--foreground);
+    border: none;
+    border-radius: 100px;
+    transition: background-color 200ms;
 }
 
 .button-generic:hover, .button-toggle.button-active:hover {
-    background: var(--primary-colour-lighter);
+    background: var(--accent);
 }
 
 .button-generic:active, .button-toggle.button-active:active {
-    background: var(--primary-colour-darker);
+    background: var(--accent-darker);
 }
 
 .button-generic-black, .button-toggle {

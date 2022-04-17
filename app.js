@@ -54,7 +54,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	const main = document.querySelector(".main");
 	const accounts = document.querySelector(".accounts");
 	const backToMain = document.querySelector(".back-to-main-button");
-	const news = document.querySelector(".news");
+	const newsContent = document.querySelector(".news-content");
 
 	const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -78,8 +78,8 @@ window.addEventListener("DOMContentLoaded", () => {
 			.then(async(response, error) => {
 				var today = new Date();
 
-				news.innerHTML = "<br/>" + await response.text();
-				for(var timeElement of news.getElementsByTagName("time")) {
+				newsContent.innerHTML = "<br/>" + await response.text();
+				for(var timeElement of newsContent.getElementsByTagName("time")) {
 					var datetime = timeElement.getAttribute("datetime");
 
 					if(datetime == "future") {
@@ -165,17 +165,17 @@ window.addEventListener("DOMContentLoaded", () => {
 			return;
 		}
 
-		login.style.display = null;
-		main.style.display = "block";
+		login.classList.add("invisible");
+		main.classList.remove("invisible");
 	};
 
 	if(launcher.accountManager.activeAccount != null) {
-		main.style.display = "block";
+		main.classList.remove("invisible");
 		updateAccount();
 	}
 	else {
-		login.style.display = "block";
-		backToMain.style.display = null;
+		login.classList.remove("invisible");
+		backToMain.classList.add("invisible");
 	}
 
 	var launching = false;
@@ -187,7 +187,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		}
 
 		if(!accounts.contains(event.target) && !accountButton.contains(event.target)) {
-			accounts.style.display = null;
+			accounts.classList.remove("invisible");
 		}
 	};
 
@@ -202,9 +202,9 @@ window.addEventListener("DOMContentLoaded", () => {
 				if(event.target.classList.contains("remove-account")
 						|| event.target.parentElement.classList.contains("remove-account")) {
 					if(!launcher.accountManager.removeAccount(account)) {
-						main.style.display = null;
-						login.style.display = "block";
-						backToMain.style.display = null;
+						main.classList.add("invisible");;
+						login.classList.remove("invisible");;
+						backToMain.classList.add("invisible");
 					}
 					else {
 						updateAccounts();
@@ -212,7 +212,7 @@ window.addEventListener("DOMContentLoaded", () => {
 				}
 				else {
 					launcher.accountManager.switchAccount(account);
-					accounts.style.display = null;
+					accounts.classList.add("invisible");
 				}
 				updateAccount();
 			};
@@ -223,19 +223,19 @@ window.addEventListener("DOMContentLoaded", () => {
 		addElement.classList.add("account");
 		addElement.innerHTML = `<img src="src/svg/add.svg"/> <span>Add Account</span>`;
 		addElement.onclick = () => {
-			main.style.display = null;
-			login.style.display = "block";
-			backToMain.style.display = "block";
+			main.classList.add("invisible");
+			login.classList.remove("invisible");
+			backToMain.classList.remove("invisible");
 		};
 
 		accounts.appendChild(addElement);
 
-		accounts.style.display = "block";
+		accounts.classList.remove("invisible");
 	}
 
 	accountButton.onclick = () => {
-		if(accounts.style.display) {
-			accounts.style.display = null;
+		if(!accounts.classList.contains("invisible")) {
+			accounts.classList.add("invisible");
 			return;
 		}
 
@@ -263,16 +263,16 @@ window.addEventListener("DOMContentLoaded", () => {
 		}
 		var account = microsoftAuthService.authenticate(result.profile);
 		launcher.accountManager.addAccount(account);
-		login.style.display = "none";
-		main.style.display = "block";
+		login.classList.add("invisible");
+		main.classList.remove("invisible");
 		updateAccount();
 		updateAccounts();
 	});
 
 	mojangLoginButton.onclick = () => {
 		if(!loggingIn) {
-			login.style.display = "none";
-			mojangLogin.style.display = "block";
+			login.classList.add("invisible");
+			mojangLogin.classList.remove("invisible");
 		}
 	};
 
@@ -294,9 +294,12 @@ window.addEventListener("DOMContentLoaded", () => {
 					updateAccount();
 				}
 
-				main.style.display = "none";
-				login.style.display = "block";
-				backToMain.style.display = launcher.accountManager.accounts.length > 0 ? "block" : "none";
+				main.classList.add("invisible");
+				login.classList.remove("invisible");
+				if (launcher.accountManager.accounts.length > 0)
+					backToMain.classList.remove("invisible");
+				else
+					backToMain.classList.remove("add");
 				playButton.innerText = "Play";
 				launching = false;
 				return;
@@ -312,8 +315,8 @@ window.addEventListener("DOMContentLoaded", () => {
 	playButton.onclick = () => play();
 
 	document.querySelector(".back-to-login-button").onclick = () => {
-		mojangLogin.style.display = "none";
-		login.style.display = "block";
+		mojangLogin.classList.add("invisible");
+		login.classList.remove("invisible");
 	};
 
 	document.querySelector(".about-tab").onclick = () => switchToTab("about");
@@ -410,14 +413,14 @@ window.addEventListener("DOMContentLoaded", () => {
 	var currentTab = "about";
 
 	function switchToTab(tab) {
-		document.querySelector("." + currentTab).style.display = "none";
+		document.querySelector("." + currentTab).classList.add("invisible");
 
-		playButton.style.display = null;
+// 		playButton.classList.add("invisible");
 
 		document.querySelector(".about-tab").classList.remove("selected-tab");
 		document.querySelector(".settings-tab").classList.remove("selected-tab");
 		document.querySelector(".news-tab").classList.remove("selected-tab");
-		document.querySelector("." + tab).style.display = "block";
+		document.querySelector("." + tab).classList.remove("invisible");
 		document.querySelector("." + tab + "-tab").classList.add("selected-tab");
 
 		currentTab = tab;

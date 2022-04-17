@@ -8,11 +8,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--primary-colour);
+    background: var(--accent);
     border-radius: 10px;
     transition: background 0.2s; /* FIXME: Super cool transition not working */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-colour-lighter);
+    background: var(--accent-lighter);
 }

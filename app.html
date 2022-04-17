@@ -54,11 +54,8 @@
 				<span class="error-message"></span>
 				<button class="button play-button login-button-mojang">Log In</button>
 			</div>
-			<div class="main invisible">
+			<div class="main">
 				<!--<img src="assets/sol_client_logo_with_text.svg" class="launcher-title" height=64/>-->
-				<button class="button account-button invisible"></button>
-				<div class="accounts invisible">
-				</div>
 				<div class="about page">
 					<div class="about-section section">
 						<div class="section-title">
@@ -71,55 +68,71 @@
 							<a class="open-in-browser" href="https://discord.gg/QFDGDhcFqu">Discord Server</a>
 						</div>
 					</div>
-					<div class="servers-box section">
+					<div id="bottom-sections" style="display: flex; height: 180px;">
+						<div class="servers-box section">
+							<div class="section-title">
+								<img src="src/svg/info.svg"/>
+								<p class="section-title-text">Servers</p>
+							</div>
+							<div class="quick-servers centred">No Added Servers</div>
+						</div>
+						<div class="account-box section">
+							<button class="button-generic account-button"></button>
+							<div class="accounts invisible">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="settings page invisible">
+					<div class="section">
 						<div class="section-title">
 							<img src="src/svg/info.svg"/>
-							<p class="section-title-text">Servers</p>
+							<p class="section-title-text">Settings</p>
 						</div>
-						<div class="quick-servers centred">No Added Servers</div>
+						<br/>
+						<div class="centred">
+							<input type="checkbox" class="optifine" id="optifine"/>
+							<label for="optifine" style="cursor: pointer;"  class="spaced-5">Install OptiFine</label>
+						</div>
+						<br/>
+						<div class="centred">
+							<input type="checkbox" class="discord" id="discord"/>
+							<label for="discord" style="cursor: pointer;"  class="spaced-5">Enable Discord RPC</label>
+						</div>
+						<br/>
+						<div class="memory-box">
+							<p>Memory</p>
+							<input type="range" class="memory">
+							<p class="memory-label"></p>
+						</div>
+						<br/>
+						<div>
+							<span class="centred">Minecraft Folder</span>
+							<br/>
+							<span class="centred spaced-15 minecraft-folder-path"></span>
+							<br/>
+							<button class="centred button button-generic minecraft-folder spaced-15">Change</button>
+						</div>
+						<br/>
+						<div class="centred">
+							<button class="button button-generic devtools">Open DevTools</button>
+						</div>
+						<br/>
 					</div>
 				</div>
-				<div class="settings invisible">
-					<br/>
-					<div class="centred">
-						<input type="checkbox" class="optifine" id="optifine"/>
-						<label for="optifine" style="cursor: pointer;"  class="spaced-5">Install OptiFine</label>
+				<div class="news page invisible">
+					<div class="section">
+						<div class="section-title">
+							<img src="src/svg/info.svg"/>
+							<p class="section-title-text">News</p>
+						</div>
+						<dvi class="news-content"><p>Loading news...</p></div>
 					</div>
-					<br/>
-					<div class="centred">
-						<input type="checkbox" class="discord" id="discord"/>
-						<label for="discord" style="cursor: pointer;"  class="spaced-5">Enable Discord RPC</label>
-					</div>
-					<br/>
-					<div class="memory-box">
-						<p>Memory</p>
-						<input type="range" class="memory">
-						<p class="memory-label"></p>
-					</div>
-					<br/>
-					<br/>
-					<div>
-						<span class="centred">Minecraft Folder</span>
-						<br/>
-						<span class="centred spaced-15 minecraft-folder-path"></span>
-						<br/>
-						<button class="centred button button-generic minecraft-folder spaced-15">Change</button>
-					</div>
-					<br/>
-					<br/>
-					<br/>
-					<div class="centred">
-						<button class="button button-generic devtools">Open DevTools</button>
-					</div>
-					<br/>
-				</div>
-				<div class="news invisible">
-					<p>Loading news...</p>
 				</div>
 				<div class="button-box">
 					<button class="button play-button" id="launch-button">PLAY</button>
 				</div>
-				<p class="invisible" id="launch-note">The first launch will take some time.</p>
+				<p class="invisible" id="launch-note" style="display: inline;">The first launch will take some time.</p>
 			</div>
 		</div>
 	</body>

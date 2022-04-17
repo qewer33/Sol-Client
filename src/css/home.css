@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: column;
     flex: 1 1 0px;
+    overflow: auto;
     margin: 0 15px 15px 15px;
     background-color: var(--background-lighter-alt);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);

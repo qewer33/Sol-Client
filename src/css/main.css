@@ -6,9 +6,9 @@
 @import "scrollbar.css";
 
 :root {
-	--primary-colour: rgb(255, 180, 0);
-	--primary-colour-lighter: rgba(255, 220, 60);
-	--primary-colour-darker: rgba(215, 140, 0);
+	--accent: rgb(255, 180, 0);
+	--accent-lighter: rgba(255, 220, 60);
+	--accent-darker: rgba(215, 140, 0);
 
 	--background: #1F1F1F;
 	--background-lighter: #2B2B2B;
@@ -47,10 +47,10 @@ img, button, a:link {
 }
 
 .invisible {
-	display: none;
+	display: none !important;
 }
 
-.account-button {
+/*.account-button {
 	position: fixed;
 	height: 30px;
 	top: 15px;
@@ -63,7 +63,7 @@ img, button, a:link {
 	padding-bottom: 3px;
 	padding-right: 8px;
 	box-shadow: 0 0 10px rgba(255, 150, 0);
-}
+}*/
 
 .account-button img {
 	position: relative;
@@ -98,15 +98,6 @@ img, button, a:link {
 	top: 1px;
 	width: 12px;
 	height: 9px;
-}
-
-
-.account-button:hover {
-	background: rgba(255, 180, 30);
-}
-
-.account-button:active {
-	background: rgba(225, 120, 0);
 }
 
 .accounts {
@@ -178,7 +169,7 @@ img, button, a:link {
 }
 
 .play-button, .login-button {
-	background-color: var(--primary-colour);
+	background-color: var(--accent);
 	color: var(--background);
 	border-radius: 100px;
 	width: 500px;
@@ -188,12 +179,12 @@ img, button, a:link {
 }
 
 .play-button:hover, .login-button:hover {
-	background: var(--primary-colour-lighter);
-	box-shadow: 0 0 20px var(--primary-colour);
+	background: var(--accent-lighter);
+	box-shadow: 0 0 20px var(--accent);
 }
 
 .play-button:active, .login-button:active {
-	background: var(--primary-colour-darker);
+	background: var(--accent-darker);
 }
 
 .play-button:disabled, .login-button:disabled {
@@ -232,13 +223,13 @@ img, button, a:link {
 	font-family: Raleway;
 }
 
-.settings, .news {
+/*.settings, .news {
 	overflow: auto;
 	position: fixed;
 	width: 100%;
 	height: calc(100% - 350px);
 	background-color: rgb(20, 20, 20);
-}
+}*/
 
 #launch-note {
 	position: fixed;
