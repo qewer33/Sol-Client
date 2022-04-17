@@ -118,7 +118,7 @@ a:link:hover, a:link:focus, a:link:active {
 .button-generic, .button-suggested {
     border: none;
     border-radius: 100px;
-    transition: background-color 200ms;
+    transition: background-color 300ms;
 }
 
 .button-generic {
@@ -137,6 +137,34 @@ a:link:hover, a:link:focus, a:link:active {
 
 .button-suggested:hover {
     background: var(--accent-lighter);
+}
+
+.play-button {
+    position: fixed;
+    left: calc(50% - 150px);
+    bottom: 50px;
+}
+
+.play-button, .login-button {
+    border-radius: 100px;
+    width: 300px;
+    height: 100px;
+    font-family: Inter-Bold;
+    font-size: 3.2em;
+}
+
+.play-button {
+    transition: background-color 450ms, box-shadow 300ms, transform 300ms;
+}
+
+.play-button:hover {
+    box-shadow: 0 0 25px var(--accent);
+    transform: scale(1.1);
+}
+
+.play-button:active {
+    box-shadow: 0 0 10px var(--accent);
+    transform: scale(0.9);
 }
 
 .spaced-15 {

@@ -7,7 +7,7 @@
 
 :root {
 	--accent: rgb(255, 180, 0);
-	--accent-lighter: rgba(255, 220, 60);
+	--accent-lighter: rgba(255, 200, 30);
 	--accent-darker: rgba(215, 140, 0);
 
 	--background: #1F1F1F;
@@ -161,20 +161,6 @@ img, button, a:link {
 
 .accounts div:last-of-type {
 	border-radius: 0px 0px 5px 5px;
-}
-
-.play-button {
-	position: fixed;
-	left: calc(50% - 150px);
-	bottom: 50px;
-}
-
-.play-button, .login-button {
-	border-radius: 100px;
-	width: 300px;
-	height: 100px;
-	font-family: Inter-Bold;
-	font-size: 3em;
 }
 
 .discord-widget {
