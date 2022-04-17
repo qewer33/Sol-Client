@@ -301,8 +301,8 @@ a:link:hover, a:link:focus, a:link:active {
 }
 
 body {
-	width: 800px;
-	height: 650px;
+	width: 100vw;
+	height: 100vh;
 	background-color: transparent;
 	color: white;
 	user-select: none;

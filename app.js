@@ -265,7 +265,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		main.style.display = "block";
 		updateAccount();
 		updateAccounts();
-	})
+	});
 
 	mojangLoginButton.onclick = () => {
 		if(!loggingIn) {

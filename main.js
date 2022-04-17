@@ -167,8 +167,7 @@ ${crashReportText}
 	ipcMain.on("minimize", () => window.minimize());
 
 	ipcMain.on("maximize", () => {
-		if (window.isMaximized()) window.restore();
-		else window.maximize();
+		window.isMaximized() ? window.restore() : window.maximize();
 	});
 
 	ipcMain.on("quit", (event, result) => {
