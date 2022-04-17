@@ -371,7 +371,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 					serverElement.classList.add("server");
 					serverElement.innerHTML = `
-						${server.icon ? `<img src="data:image/png;base64,${server.icon.value}"/>` : `<img src="../svg/unknown_server.svg"/>`}`;
+						${server.icon ? `<img src="data:image/png;base64,${server.icon.value}"/>` : `<img src="../svg/unknown_server.svg"/>`}<p>${server.name.value}</p>`;
 
 					serversList.appendChild(serverElement);
 				}

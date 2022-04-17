@@ -184,18 +184,29 @@ img, button, a:link {
 }
 
 .server {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	cursor: pointer;
+	background-color: transparent;
+	padding: 10px;
+	padding-bottom: 0;
+	margin-top: -10px;
+	border-radius: 10px;
+	transition: transform 200ms, background-color 200ms;
 }
 
 .server img {
-	transition: transform 0.2s;
+	border-radius: 15px;
 }
 
-.server:hover img {
-	transform: scale(120%);
+.server:hover {
+	background-color: var(--background-lighter);
+	transform: scale(110%);
 }
 
-.server:active img {
+.server:active {
 	transform: scale(90%);
 }
 

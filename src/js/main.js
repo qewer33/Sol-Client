@@ -20,8 +20,8 @@ async function run() {
 
 	function createWindow() {
 		var options = {
-			width: 800,
-			height: 650,
+			width: 920,
+			height: 700,
 			icon: __dirname + "../png/icon.png",
 			webPreferences: {
 				preload: path.join(__dirname, "./app.js")
