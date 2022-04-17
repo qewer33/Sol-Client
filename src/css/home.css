@@ -1,0 +1,38 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px 0 15px;
+    background-color: var(--background-lighter-alt);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+}
+
+.section-title {
+    display: flex;
+    margin: -10px 0 0 20px;
+}
+
+.section-title-text {
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.about-text {
+    color: var(--foreground-alt);
+    font-size: 24px;
+    text-align: center;
+    font-family: Inter-Light;
+    margin: 0 15px 0 15px;
+}
+
+.links-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}

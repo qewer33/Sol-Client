@@ -1,10 +1,20 @@
 @import "fonts.css";
 @import "titlebar.css";
+@import "home.css";
 
 :root {
 	--primary-colour: rgb(255, 180, 0);
 	--primary-colour-lighter: rgba(255, 220, 60);
 	--primary-colour-darker: rgba(215, 140, 0);
+
+	--background: #1F1F1F;
+	--background-lighter: #2B2B2B;
+	--background-lighter-alt: #232323;
+	--backgrond-darker: #191919;
+
+	--foreground: #ffffff;
+	--foreground-alt: #d5d5d5;
+	--foreground-inactive: #a7a7a7;
 }
 
 .input {
@@ -202,25 +212,27 @@
 
 .play-button {
 	position: fixed;
-	left: calc(50% - 125px);
+	left: calc(50% - 250px);
 	bottom: 50px;
 }
 
 .play-button, .login-button {
-	background: rgb(0, 100, 0);
-	border-radius: 5px;
-	width: 250px;
+	background-color: var(--primary-colour);
+	color: var(--background);
+	border-radius: 100px;
+	width: 500px;
 	height: 100px;
-	font-size: 2.5em;
-	box-shadow: 0 0 20px rgb(0, 100, 0);
+	font-family: Inter-Bold;
+	font-size: 3em;
 }
 
 .play-button:hover, .login-button:hover {
-	background: rgb(0, 120, 0);
+	background: var(--primary-colour-lighter);
+	box-shadow: 0 0 20px var(--primary-colour);
 }
 
 .play-button:active, .login-button:active {
-	background: rgb(0, 80, 0);
+	background: var(--primary-colour-darker);
 }
 
 .play-button:disabled, .login-button:disabled {
@@ -280,51 +292,6 @@ a:link:hover, a:link:focus, a:link:active {
 	text-decoration: underline;
 }
 
-.tabs {
-	display: table;
-	margin-left: auto;
-	margin-right: auto;
-	height: 20px;
-}
-
-.tabs button {
-	display: inline;
-	background: none;
-	border: none;
-	height: 100%;
-	color: white;
-	transition: background 0.2s;
-	border-radius: 100px;
-	cursor: pointer;
-}
-
-.tabs button:hover {
-	background-color: rgba(255, 255, 255, 0.3);
-}
-
-.tabs button:active {
-	background-color: rgba(255, 255, 255, 0.1);
-}
-
-.selected-tab {
-	text-decoration: underline;
-}
-
-.tabs .sep {
-	display: inline-block;
-	width: 1px;
-	height: 15px;
-	position: relative;
-	top: 3px;
-	background-color: white;
-	margin-left: 3px;
-	margin-right: 3px;
-}
-
-.about-text {
-	margin-left: 30px;
-}
-
 .error-message {
 	font-size: 1.5em;
 	color: rgb(255, 85, 85);
@@ -334,18 +301,29 @@ a:link:hover, a:link:focus, a:link:active {
 }
 
 body {
-	background-color: rgb(30, 30, 30);
+	width: 800px;
+	height: 650px;
+	background-color: transparent;
 	color: white;
 	user-select: none;
 	margin: 0;
 }
 
-img, a:link {
+#window-background {
+	width: 100%;
+	height: 100%;
+	background-color: var(--background);
+	border-radius: 35px;
+	overflow: hidden;
+}
+
+img, button, a:link {
 	-webkit-user-drag: none;
+	-webkit-app-region: no-drag;
 }
 
 body, button, input {
-	font-family: Roboto-Regular;
+	font-family: Inter-Regular;
 }
 
 .invisible {
@@ -650,7 +628,6 @@ input[type="range"]:hover::-webkit-slider-thumb {
 }
 
 .drag-region {
-	height: 26px;
 	-webkit-app-region: drag;
 }
 

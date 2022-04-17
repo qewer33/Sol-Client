@@ -1,0 +1,70 @@
+.titlebar {
+    display: flex;
+    margin: 15px;
+    padding: 10px;
+    background-color: var(--background-lighter);
+    border-radius: 100px;
+}
+
+.titlebar div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-title {
+    margin: 0 10px 0 15px;
+    font-size: 25px;
+}
+
+.version-title {
+    margin: 0;
+    color: var(--foreground-inactive);
+    font-size: 13px;
+}
+
+.tabs {
+    height: 32px;
+    flex-grow: 2;
+}
+
+.tabs button {
+    display: inline;
+    background: none;
+    border: none;
+    height: 100%;
+    color: var(--foreground-inactive);
+    transition: background 0.2s;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 17px;
+    padding: 0 12px 0 12px;
+}
+
+.tabs button:hover {
+    background-color: var(--background-lighter-alt);
+}
+
+.selected-tab {
+    color: var(--foreground) !important;
+    background-color: var(--background) !important;
+}
+
+.tabs .sep {
+    width: 3px;
+}
+
+.titlebar-button {
+    display: flex;
+    background-color: transparent;
+    border-radius: 100px;
+    border: none;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 500ms;
+}
+
+.titlebar-button:hover {
+    background-color: var(--background);
+}

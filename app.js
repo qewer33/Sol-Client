@@ -37,6 +37,10 @@ window.addEventListener("DOMContentLoaded", () => {
 		document.querySelector(".drag-region").style.display = "block";
 	}
 
+	const minimizeButton = document.getElementById("minimize-button");
+	const maximizeButton = document.getElementById("maximize-button");
+	const closeButton = document.getElementById("close-button");
+
 	const playButton = document.getElementById("launch-button");
 	const launchNote = document.getElementById("launch-note");
 	const microsoftLoginButton = document.querySelector(".microsoft-login-button");
@@ -51,6 +55,18 @@ window.addEventListener("DOMContentLoaded", () => {
 	const news = document.querySelector(".news");
 
 	const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+	minimizeButton.onclick = () => {
+		ipcRenderer.send("minimize");
+	}
+
+	maximizeButton.onclick = () => {
+		ipcRenderer.send("maximize");
+	}
+
+	closeButton.onclick = () => {
+		ipcRenderer.send("quit", launcher.games.length < 1);
+	}
 
 	fetch("https://sol-client.github.io/news.html", {
 				headers: {

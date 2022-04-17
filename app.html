@@ -4,104 +4,120 @@
 		<link rel="stylesheet" href="src/css/main.css"/>
 	</head>
 	<body>
-		<div class="drag-region invisible"></div>
-		<div class="login invisible">
-			<button class="button back-button invisible back-to-main-button">◀</button>
-			<br/>
-			<br/>
-			<h1 class="title">Log In</h1>
-			<br/>
-			<br/>
-			<div class="login-box">
-				<button class="button login-button microsoft-login-button">Microsoft Account</button>
+		<div id="window-background">
+			<div class="titlebar drag-region">
+				<div class="titles" style="justify-content: left;">
+					<p class="main-title">Sol Client</p>
+					<p class="version-title">v2.0</p>
+				</div>
+				<div class="tabs">
+					<button class="about-tab selected-tab">Home</button>
+					<span class="sep"></span>
+					<button class="settings-tab">Settings</button>
+					<span class="sep"></span>
+					<button class="news-tab">News</button>
+				</div>
+				<div class="buttons" style="justify-content: right;">
+					<button id="minimize-button" class="titlebar-button"><img src="src/svg/minimize.svg"/></button>
+					<button id="maximize-button" class="titlebar-button"><img src="src/svg/maximize.svg"/></button>
+					<button id="close-button" class="titlebar-button"><img src="src/svg/close.svg"/></button>
+				</div>
+			</div>
+			<div class="drag-region invisible"></div>
+			<div class="login invisible">
+				<button class="button back-button invisible back-to-main-button">◀</button>
 				<br/>
-				<button class="button login-button mojang-login-button">Mojang Account</button>
-			</div>
-		</div>
-		<div class="mojang-login invisible">
-			<button class="button back-button back-to-login-button">◀</button>
-			<br/>
-			<br/>
-			<h1 class="title">Log In</h1>
-			<br/>
-			<br/>
-			<div class="login-box">
-				<label for="username" class="label">Mojang Account (Email)</label>
-				<input id="username" class="input" type="username" spellcheck="false" autocomplete="off"/>
-				<label for="password" class="label">Password</label>
-				<input id="password" class="input" type="password"/>
 				<br/>
-			</div>
-			<span class="error-message"></span>
-			<button class="button play-button login-button-mojang">Log In</button>
-		</div>
-		<div class="main invisible">
-			<img src="assets/sol_client_logo_with_text.svg" class="launcher-title" height=64/>
-			<button class="button account-button"></button>
-			<div class="accounts invisible">
-			</div>
-			<div class="tabs">
-				<button class="about-tab selected-tab">Home</button>
-				<div class="sep"></div>
-				<button class="settings-tab">Settings</button>
-				<div class="sep"></div>
-				<button class="news-tab">News</button>
-			</div>
-			<br/>
-			<div class="about">
-				<div class="about-text">
-					<p>Sol Client is a new Minecraft Client designed to be simple and easy to use, yet not lacking in features.</p>
+				<h1 class="title">Log In</h1>
+				<br/>
+				<br/>
+				<div class="login-box">
+					<button class="button login-button microsoft-login-button">Microsoft Account</button>
 					<br/>
-					<a class="open-in-browser" style="margin-right: 10px;" href="https://github.com/TheKodeToad/Sol-Client">GitHub</a>
-					<a class="open-in-browser" href="https://discord.gg/QFDGDhcFqu">Discord Server</a>
-				</div>
-				<br/>
-				<div class="quick-join-box">
-					<h3 class="centred-text quick-join-text">Play Server</h3>
-					<div class="quick-servers centred">No Added Servers</div>
+					<button class="button login-button mojang-login-button">Mojang Account</button>
 				</div>
 			</div>
-			<div class="settings invisible">
-				<br/>
-				<div class="centred">
-					<input type="checkbox" class="optifine" id="optifine"/>
-					<label for="optifine" style="cursor: pointer;"  class="spaced-5">Install OptiFine</label>
-				</div>
-				<br/>
-				<div class="centred">
-					<input type="checkbox" class="discord" id="discord"/>
-					<label for="discord" style="cursor: pointer;"  class="spaced-5">Enable Discord RPC</label>
-				</div>
-				<br/>
-				<div class="memory-box">
-					<p>Memory</p>
-					<input type="range" class="memory">
-					<p class="memory-label"></p>
-				</div>
+			<div class="mojang-login invisible">
+				<button class="button back-button back-to-login-button">◀</button>
 				<br/>
 				<br/>
-				<div>
-					<span class="centred">Minecraft Folder</span>
+				<h1 class="title">Log In</h1>
+				<br/>
+				<br/>
+				<div class="login-box">
+					<label for="username" class="label">Mojang Account (Email)</label>
+					<input id="username" class="input" type="username" spellcheck="false" autocomplete="off"/>
+					<label for="password" class="label">Password</label>
+					<input id="password" class="input" type="password"/>
 					<br/>
-					<span class="centred spaced-15 minecraft-folder-path"></span>
+				</div>
+				<span class="error-message"></span>
+				<button class="button play-button login-button-mojang">Log In</button>
+			</div>
+			<div class="main invisible">
+				<!--<img src="assets/sol_client_logo_with_text.svg" class="launcher-title" height=64/>-->
+				<button class="button account-button invisible"></button>
+				<div class="accounts invisible">
+				</div>
+				<div class="about">
+					<div class="about-section section">
+						<div class="section-title">
+							<img src="src/svg/info.svg"/>
+							<p class="section-title-text">About</p>
+						</div>
+						<p class="about-text">Sol Client is a free and open source Minecraft Client designed to be simple and easy to use, yet not lacking in features.</p>
+						<div class="links-wrapper">
+							<a class="open-in-browser" style="margin-right: 10px;" href="https://github.com/TheKodeToad/Sol-Client">GitHub</a>
+							<a class="open-in-browser" href="https://discord.gg/QFDGDhcFqu">Discord Server</a>
+						</div>
+					</div>
+					<div class="quick-join-box section">
+						<h3 class="centred-text quick-join-text">Play Server</h3>
+						<div class="quick-servers centred">No Added Servers</div>
+					</div>
+				</div>
+				<div class="settings invisible">
 					<br/>
-					<button class="centred button button-generic minecraft-folder spaced-15">Change</button>
+					<div class="centred">
+						<input type="checkbox" class="optifine" id="optifine"/>
+						<label for="optifine" style="cursor: pointer;"  class="spaced-5">Install OptiFine</label>
+					</div>
+					<br/>
+					<div class="centred">
+						<input type="checkbox" class="discord" id="discord"/>
+						<label for="discord" style="cursor: pointer;"  class="spaced-5">Enable Discord RPC</label>
+					</div>
+					<br/>
+					<div class="memory-box">
+						<p>Memory</p>
+						<input type="range" class="memory">
+						<p class="memory-label"></p>
+					</div>
+					<br/>
+					<br/>
+					<div>
+						<span class="centred">Minecraft Folder</span>
+						<br/>
+						<span class="centred spaced-15 minecraft-folder-path"></span>
+						<br/>
+						<button class="centred button button-generic minecraft-folder spaced-15">Change</button>
+					</div>
+					<br/>
+					<br/>
+					<br/>
+					<div class="centred">
+						<button class="button button-generic devtools">Open DevTools</button>
+					</div>
+					<br/>
 				</div>
-				<br/>
-				<br/>
-				<br/>
-				<div class="centred">
-					<button class="button button-generic devtools">Open DevTools</button>
+				<div class="news invisible">
+					<p>Loading news...</p>
 				</div>
-				<br/>
+				<div class="button-box">
+					<button class="button play-button" id="launch-button">PLAY</button>
+				</div>
+				<p class="invisible" id="launch-note">The first launch will take some time.</p>
 			</div>
-			<div class="news invisible">
-				<p>Loading news...</p>
-			</div>
-			<div class="button-box">
-				<button class="button play-button" id="launch-button">Play</button>
-			</div>
-			<p class="invisible" id="launch-note">The first launch will take some time.</p>
 		</div>
 	</body>
 </html>

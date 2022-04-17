@@ -30,7 +30,9 @@ async function run() {
 			},
 			title: "Sol Client " + Utils.version,
 			show: false,
-			backgroundColor: "#1e1e1e"
+// 			backgroundColor: "#1e1e1e",
+			frame: false,
+			transparent: true,
 		};
 
 		if(Utils.getOsName() == "osx") {
@@ -161,6 +163,13 @@ ${crashReportText}
 	});
 
 	ipcMain.on("devtools", () => window.webContents.openDevTools());
+
+	ipcMain.on("minimize", () => window.minimize());
+
+	ipcMain.on("maximize", () => {
+		if (window.isMaximized()) window.restore();
+		else window.maximize();
+	});
 
 	ipcMain.on("quit", (event, result) => {
 		if(result) {
