@@ -93,35 +93,37 @@
 							<img src="../svg/material/settings.svg"/>
 							<p class="section-title-text">Settings</p>
 						</div>
-						<br/>
-						<div class="centred">
-							<input type="checkbox" class="optifine" id="optifine"/>
-							<label for="optifine" style="cursor: pointer;"  class="spaced-5">Install OptiFine</label>
-						</div>
-						<br/>
-						<div class="centred">
-							<input type="checkbox" class="discord" id="discord"/>
-							<label for="discord" style="cursor: pointer;"  class="spaced-5">Enable Discord RPC</label>
-						</div>
-						<br/>
-						<div class="memory-box">
-							<p>Memory</p>
-							<input type="range" class="memory">
-							<p class="memory-label"></p>
-						</div>
-						<br/>
-						<div>
-							<span class="centred">Minecraft Folder</span>
+						<div style="overflow: auto;">
 							<br/>
-							<span class="centred spaced-15 minecraft-folder-path"></span>
+							<div class="centred">
+								<input type="checkbox" class="optifine" id="optifine"/>
+								<label for="optifine" style="cursor: pointer;"  class="spaced-5">Install OptiFine</label>
+							</div>
 							<br/>
-							<button class="centred button button-generic minecraft-folder spaced-15">Change</button>
+							<div class="centred">
+								<input type="checkbox" class="discord" id="discord"/>
+								<label for="discord" style="cursor: pointer;"  class="spaced-5">Enable Discord RPC</label>
+							</div>
+							<br/>
+							<div class="memory-box">
+								<p>Memory</p>
+								<input type="range" class="memory">
+								<p class="memory-label"></p>
+							</div>
+							<br/>
+							<div>
+								<span class="centred">Minecraft Folder</span>
+								<br/>
+								<span class="centred spaced-15 minecraft-folder-path"></span>
+								<br/>
+								<button class="centred button button-generic minecraft-folder spaced-15">Change</button>
+							</div>
+							<br/>
+							<div class="centred">
+								<button class="button button-generic devtools">Open DevTools</button>
+							</div>
+							<br/>
 						</div>
-						<br/>
-						<div class="centred">
-							<button class="button button-generic devtools">Open DevTools</button>
-						</div>
-						<br/>
 					</div>
 				</div>
 				<div class="news page invisible">
@@ -130,7 +132,9 @@
 							<img src="../svg/material/news.svg"/>
 							<p class="section-title-text">News</p>
 						</div>
-						<dvi class="news-content"><p>Loading news...</p></div>
+						<div style="overflow: auto;">
+							<div class="news-content"><p>Loading news...</p></div>
+						</div>
 					</div>
 				</div>
 				<div class="button-box">

@@ -132,7 +132,7 @@ a:link:hover, a:link:focus, a:link:active {
 
 .button-suggested {
     background: var(--accent);
-    color: black;
+    color: var(--background);
 }
 
 .button-suggested:hover {
