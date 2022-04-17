@@ -1,0 +1,159 @@
+.input {
+    display: block;
+    border: solid 2px transparent;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input:focus {
+    border-color: white;
+}
+
+.button {
+    color: white;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    border: none;
+    padding: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+
+.back-button {
+    position: absolute;
+    background-color: rgb(0, 150, 255);
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5em;
+    box-shadow: 0 0 20px rgb(0, 150, 255);
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: rgb(40, 190, 255);
+}
+
+.back-button:active {
+    background-color: rgb(0, 100, 185);
+}
+
+.title {
+    font-family: Raleway-Regular;
+    font-size: 3em;
+}
+
+.title, .centred-text {
+    text-align: center;
+}
+
+.title, h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+.subtitle {
+    font-family: Raleway-Regular;
+    text-align: center;
+    font-size: 2em;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 10px;
+    border-radius: 10px;
+    background: rgba(100, 100, 100);
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    background: var(--primary-colour);
+    transition: background 0.2s;
+    box-shadow: 0 0 5px var(--primary-colour);
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+    background: var(--primary-colour-lighter);
+}
+
+.error-message {
+    font-size: 1.5em;
+    color: rgb(255, 85, 85);
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a:link {
+    color: var(--primary-colour);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:link:hover, a:link:focus, a:link:active {
+    color: white;
+    text-decoration: underline;
+}
+
+.label {
+    position: relative;
+    left: 2px;
+    display: block;
+    font-size: 1.5em;
+    width: calc(100% - 2px);
+}
+
+.button-generic, .button-toggle.button-active {
+    background: var(--primary-colour);
+    border-radius: 5px;
+    color: black;
+    box-shadow: 0 0 10px var(--primary-colour);
+}
+
+.button-generic:hover, .button-toggle.button-active:hover {
+    background: var(--primary-colour-lighter);
+}
+
+.button-generic:active, .button-toggle.button-active:active {
+    background: var(--primary-colour-darker);
+}
+
+.button-generic-black, .button-toggle {
+    background: rgb(60, 60, 60);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(50, 50, 50);
+}
+
+.button-generic-black:hover, .button-toggle:hover {
+    background: rgb(70, 70, 70);
+}
+
+.button-generic-black:active, .button-toggle:active {
+    background: rgb(50, 50, 50);
+}
+
+.spaced-15 {
+    margin-left: 15px;
+}
+
+.spaced-5 {
+    margin-left: 5px;
+}
+
+.centred {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,12 +1,16 @@
-.home-page {
-    display: flex;
+.page {
+    display: flex !important;
     flex-direction: column;
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 270px);
 }
 
 .section {
     display: flex;
     flex-direction: column;
-    margin: 0 15px 0 15px;
+    flex: 1 1 0px;
+    margin: 0 15px 15px 15px;
     background-color: var(--background-lighter-alt);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     border-radius: 25px;

@@ -37,6 +37,8 @@ window.addEventListener("DOMContentLoaded", () => {
 		document.querySelector(".drag-region").style.display = "block";
 	}
 
+	const windowBackground = document.getElementById("window-background");
+
 	const minimizeButton = document.getElementById("minimize-button");
 	const maximizeButton = document.getElementById("maximize-button");
 	const closeButton = document.getElementById("close-button");

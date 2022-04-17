@@ -1,0 +1,27 @@
+.login, .mojang-login {
+    position: relative;
+}
+
+.login-button {
+    width: 350px;
+    display: block;
+    font-size: 2em;
+}
+
+.login-box {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+
+.login-box .button {
+    margin-bottom: 10px;
+}
+
+.login-box .input {
+    font-size: 1.3em;
+    width: 350px;
+    height: 30px;
+    margin-bottom: 30px;
+    padding: 5px;
+}

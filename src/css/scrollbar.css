@@ -1,0 +1,18 @@
+::-webkit-scrollbar {
+    width: 5px;
+    transition: width 0.2s;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-colour);
+    border-radius: 10px;
+    transition: background 0.2s; /* FIXME: Super cool transition not working */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-colour-lighter);
+}
