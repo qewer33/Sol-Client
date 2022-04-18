@@ -19,7 +19,7 @@
 
 .section-title {
     display: flex;
-    margin: -10px 0 0 20px;
+    margin: -10px 0 -10px 20px;
 }
 
 .section-title-text {
@@ -40,4 +40,41 @@
     display: flex;
     justify-content: center;
     margin: 20px 0;
+}
+
+.quick-servers {
+    display: flex;
+    overflow-x: scroll;
+    margin-left: 20px;
+}
+
+.server {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 10px;
+    padding-bottom: 0;
+    border-radius: 10px;
+    transition: transform 200ms, background-color 200ms;
+    transform: scale(90%);
+}
+
+.server img {
+    border-radius: 15px;
+}
+
+.server:hover {
+    background-color: var(--background-lighter);
+    transform: scale(100%);
+}
+
+.server:active {
+    transform: scale(85%);
+}
+
+.server:not(:last-child) {
+    margin-right: 10px;
 }

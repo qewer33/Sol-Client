@@ -183,37 +183,6 @@ img, button, a:link {
 	width: 100%;
 }
 
-.server {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	background-color: transparent;
-	padding: 10px;
-	padding-bottom: 0;
-	margin-top: -10px;
-	border-radius: 10px;
-	transition: transform 200ms, background-color 200ms;
-}
-
-.server img {
-	border-radius: 15px;
-}
-
-.server:hover {
-	background-color: var(--background-lighter);
-	transform: scale(110%);
-}
-
-.server:active {
-	transform: scale(90%);
-}
-
-.server:not(:last-child) {
-	margin-right: 10px;
-}
-
 #text1476 {
 	font-family: Raleway;
 }
