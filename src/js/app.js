@@ -48,10 +48,12 @@ window.addEventListener("DOMContentLoaded", () => {
 	const microsoftLoginButton = document.querySelector(".microsoft-login-button");
 	const mojangLoginButton = document.querySelector(".mojang-login-button");
 	const accountButton = document.querySelector(".account-button");
+	const addAccountButton = document.querySelector(".add-button");
 
 	const login = document.querySelector(".login");
 	const mojangLogin = document.querySelector(".mojang-login");
 	const main = document.querySelector(".main");
+	const accountProfile = document.getElementById("account-profile-wrapper");
 	const accounts = document.querySelector(".accounts");
 	const backToMain = document.querySelector(".back-to-main-button");
 	const newsContent = document.querySelector(".news-content");
@@ -68,6 +70,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	closeButton.onclick = () => {
 		ipcRenderer.send("quit", launcher.games.length < 1);
+	}
+
+	addAccountButton.onclick = () => {
+		main.classList.add("invisible");
+		login.classList.remove("invisible");
+		backToMain.classList.remove("invisible");
 	}
 
 	fetch("https://sol-client.github.io/news.html", {
@@ -151,7 +159,9 @@ window.addEventListener("DOMContentLoaded", () => {
 	});
 
 	function updateAccount() {
-		document.querySelector(".account-button").innerHTML = `<img src="${launcher.accountManager.activeAccount.head}"/> <span>${launcher.accountManager.activeAccount.username} <img src="../svg/arrow.svg" class="arrow-icon"/></span>`;
+// 		document.querySelector(".account-button").innerHTML = `<img src="${launcher.accountManager.activeAccount.head}"/> <span>${launcher.accountManager.activeAccount.username} <img src="../svg/arrow.svg" class="arrow-icon"/></span>`;
+		document.getElementById("account-profile-image").innerHTML = `<img src="${launcher.accountManager.activeAccount.head}"/>`;
+		document.getElementById("account-profile-name").innerHTML = `${launcher.accountManager.activeAccount.username}`;
 	}
 
 	function updateMinecraftFolder() {
@@ -187,7 +197,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		}
 
 		if(!accounts.contains(event.target) && !accountButton.contains(event.target)) {
-			accounts.classList.remove("invisible");
+			accounts.classList.add("invisible");
 		}
 	};
 
@@ -197,7 +207,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		for(let account of launcher.accountManager.accounts) {
 			var accountElement = document.createElement("div");
 			accountElement.classList.add("account");
-			accountElement.innerHTML = `<img src="${account.head}"/> <span>${account.username}</span> <button class="remove-account"><img src="../svg/remove.svg"/></button>`;
+			accountElement.innerHTML = `<img src="${account.head}"/> <span>${account.username}</span> <button class="remove-account"><img src="../svg/material/close.svg"/></button>`;
 			accountElement.onclick = (event) => {
 				if(event.target.classList.contains("remove-account")
 						|| event.target.parentElement.classList.contains("remove-account")) {
@@ -213,29 +223,21 @@ window.addEventListener("DOMContentLoaded", () => {
 				else {
 					launcher.accountManager.switchAccount(account);
 					accounts.classList.add("invisible");
+					accountProfile.classList.remove("invisible");
 				}
 				updateAccount();
 			};
 			accounts.appendChild(accountElement);
 		}
 
-		var addElement = document.createElement("div");
-		addElement.classList.add("account");
-		addElement.innerHTML = `<img src="../svg/add.svg"/> <span>Add Account</span>`;
-		addElement.onclick = () => {
-			main.classList.add("invisible");
-			login.classList.remove("invisible");
-			backToMain.classList.remove("invisible");
-		};
-
-		accounts.appendChild(addElement);
-
 		accounts.classList.remove("invisible");
+		accountProfile.classList.add("invisible");
 	}
 
 	accountButton.onclick = () => {
 		if(!accounts.classList.contains("invisible")) {
 			accounts.classList.add("invisible");
+			accountProfile.classList.remove("invisible");
 			return;
 		}
 

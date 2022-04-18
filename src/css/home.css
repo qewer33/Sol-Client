@@ -78,3 +78,126 @@
 .server:not(:last-child) {
     margin-right: 10px;
 }
+
+#account-profile-wrapper {
+    display: flex;
+    margin-right: 15px;
+    margin-left: 20px;
+    margin-top: 3px;
+    margin-bottom: 20px;
+}
+
+#account-profile-image img {
+    width: 65px;
+    height: 65px;
+    image-rendering: pixelated;
+    border-radius: 10px;
+}
+
+#account-profile-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 22px;
+}
+
+#account-profile-logged-text {
+    color: var(--foreground-inactive);
+    font-size: 18px;
+    margin: 0;
+}
+
+#account-profile-name {
+    color: var(--foreground);
+    font-size: 24px;
+    margin: 0;
+    margin-top: 5px;
+}
+
+#account-buttons-wrapper {
+display: flex;
+    margin: 16px;
+    margin-top: 0px;
+}
+
+.add-button {
+    flex: 1;
+    margin-right: 5px;
+}
+
+.account-button {
+    flex: 1;
+    margin-left: 5px;
+}
+
+.accounts {
+    background: transparent;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    margin-top: 0;
+    flex: 1;
+    overflow-y: scroll;
+}
+
+.account {
+    display: flex;
+    height: 25px;
+    align-items: center;
+    color: var(--foreground);
+    transition: background 0.2s;
+    border: none;
+    padding: 5px;
+    padding-right: 33px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.account img {
+    width: 20px;
+    height: 20px;
+    image-rendering: pixelated;
+    margin-right: 10px;
+    margin-left: 15px;
+}
+
+.account .remove-account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 45px;
+    transition: background-color 0.2s;
+    padding: 0;
+    background: none;
+    border: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.remove-account img {
+    margin-right: 15px;
+}
+
+.account .remove-account:hover {
+    background-color: var(--background-lighter);
+}
+
+.remove-account:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.remove-account:active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.account:hover {
+    background: rgb(75, 75, 75);
+}

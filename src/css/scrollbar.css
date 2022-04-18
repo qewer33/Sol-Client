@@ -1,6 +1,9 @@
 ::-webkit-scrollbar {
-    width: 5px;
-    transition: width 0.2s;
+    width: 7px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 7px;
 }
 
 ::-webkit-scrollbar-track {
@@ -10,7 +13,6 @@
 ::-webkit-scrollbar-thumb {
     background: var(--accent);
     border-radius: 10px;
-    transition: background 0.2s; /* FIXME: Super cool transition not working */
 }
 
 ::-webkit-scrollbar-thumb:hover {
